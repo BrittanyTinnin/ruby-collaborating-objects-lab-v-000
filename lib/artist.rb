@@ -34,7 +34,7 @@ class Artist
 
   def self.find_or_create_by_name(name)
     find_it = self.all.find{|artist| artist.name == name}
-    !!find_it ? find_it : Artist.new(name)
+    !!find_it ? find_it : self.create_by_name(name)
   end
 
 
